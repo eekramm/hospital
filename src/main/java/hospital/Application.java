@@ -8,6 +8,14 @@ public class Application {
 
 		System.out.println(BarMakerClass.barMaker(750));
 		System.out.println(BarMakerClass.barMaker(1495));
+	
+		Employee employee1 = new Employee ("","","");
+		Patient patient1 = new Patient ("");
+		
+	
+	
+	
+	
 	}
 
 }
