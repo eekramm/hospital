@@ -28,4 +28,11 @@ public abstract class Employee {
 		this.title = title;
 		this.idNumber = idNumber;
 	}
+
+	@Override
+	public String toString() {
+		return "Employee {name=" + name + ", title=" + title + ", idNumber=" + idNumber + ", pay=" + pay + "]";
+	}
+	
+	
 }

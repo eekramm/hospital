@@ -28,15 +28,27 @@ public class Hospital {
 		organization += OrganizationAfterOrganize;
 	}
 	
-	
-	
-	
-	
-
+	//HashMap Starts below
 	static HashMap<String, Patient> patientList = new HashMap<String, Patient>();
 	static HashMap<String, Employee> employeeList = new HashMap<String, Employee>();
 
 	public void addPatient(Patient patient) {
 		patientList.put(patient.getIdNumber(), patient);
 	}
+	
+	public void removePatient(Patient patient) {
+		patientList.remove(patient.getIdNumber(), patient);
+	}
+	
+	public void addEmployee(Employee employee) {
+		employeeList.remove(employee.getIdNumber(), employee);
+	}
+	
+	public void removeEmployee(Employee employee) {
+		employeeList.remove(employee.getIdNumber(), employee);
+	}
+	
+	
+	
+
 }

@@ -4,6 +4,7 @@ public class Patient {
 	private int health;
 	private int bloodLevel;
 	private int hunger;
+	private String name;
 	private String idNumber;
 
 	private final static int HEALTH_LEVEL = 10; // default inti health level -- final sets value in stone (immutable)
@@ -22,14 +23,20 @@ public class Patient {
 		return hunger;
 	}
 	
+	public String getName() {
+		return name;
+	}
+	
 	public String getIdNumber() {
 		return idNumber;
 	}
 	
-	public Patient(String string) {
+	public Patient(String name, String idNumber) {
 		health = HEALTH_LEVEL;
 		bloodLevel = BLOOD_LEVEL;
 		hunger = HUNGER;
+		this.name = name;
+		this.idNumber = idNumber;
 	}
 
 	// Decreases blood by int specified in perspective class
@@ -52,6 +59,13 @@ public class Patient {
 	public void satisfyHunger(int hungerAfterFeed) {
 		hunger += hungerAfterFeed;
 	}
+
+	@Override
+	public String toString() {
+		return "Patient [health=" + health + ", bloodLevel=" + bloodLevel + ", hunger=" + hunger + ", name=" + name
+				+ ", idNumber=" + idNumber + "]";
+	}
+	
 }
 
 //	
