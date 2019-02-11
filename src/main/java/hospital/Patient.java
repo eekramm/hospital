@@ -4,7 +4,9 @@ public class Patient {
 	private int health;
 	private int bloodLevel;
 	private int hunger;
+	private String name;
 	private String idNumber;
+	private String stats;
 
 	private final static int HEALTH_LEVEL = 10; // default inti health level -- final sets value in stone (immutable)
 	private final static int BLOOD_LEVEL = 20; // default inti blood level -- final sets value in stone (immutable)
@@ -22,14 +24,24 @@ public class Patient {
 		return hunger;
 	}
 	
+	public String getName() {
+		return name;
+	}
+	
 	public String getIdNumber() {
 		return idNumber;
 	}
+	public String getStats() {
+		return "Patient name=" + name + "\nidNumber=" + idNumber + "\nhealth=" + health + "\nbloodLevel=" + bloodLevel + "\nhunger=" + hunger;
+
+	}
 	
-	public Patient(String string) {
+	public Patient(String name, String idNumber) {
 		health = HEALTH_LEVEL;
 		bloodLevel = BLOOD_LEVEL;
 		hunger = HUNGER;
+		this.name = name;
+		this.idNumber = idNumber;
 	}
 
 	// Decreases blood by int specified in perspective class
@@ -52,24 +64,20 @@ public class Patient {
 	public void satisfyHunger(int hungerAfterFeed) {
 		hunger += hungerAfterFeed;
 	}
-}
 
-//	
-//	private int healthLevel;
-//	private int bloodLevel;
-//	private final static int BLOOD_LEVEL = 20; //default inti blood level -- final sets value in stone (immutable)
-//
-//	
-//	public int getHealth() {
-//		return health;
-//	}
-//	
-//	public Patient(String string) {
-//		health = HEALTH_LEVEL;
-//		bloodLevel = BLOOD_LEVEL;
-//	}
-//
-//	}
-//	
-//
-//
+	@Override
+	public String toString() {
+		return "Patient name=" + name + "\nidNumber=" + idNumber + "\nhealth=" + health + "\nbloodLevel=" + bloodLevel + "\nhunger=" + hunger;
+	}
+
+	public String stats() {
+		return "Patient name=" + name + "\nidNumber=" + idNumber + "\nhealth=" + health + "\nbloodLevel=" + bloodLevel + "\nhunger=" + hunger;
+	}
+
+	public void tick() {
+		health -= 1;
+		bloodLevel -= 1;
+		hunger -= 1;
+	}
+}
+	
