@@ -6,6 +6,7 @@ public class Patient {
 	private int hunger;
 	private String name;
 	private String idNumber;
+	private String stats;
 
 	private final static int HEALTH_LEVEL = 10; // default inti health level -- final sets value in stone (immutable)
 	private final static int BLOOD_LEVEL = 20; // default inti blood level -- final sets value in stone (immutable)
@@ -29,6 +30,10 @@ public class Patient {
 	
 	public String getIdNumber() {
 		return idNumber;
+	}
+	public String getStats() {
+		return "Patient name=" + name + "\nidNumber=" + idNumber + "\nhealth=" + health + "\nbloodLevel=" + bloodLevel + "\nhunger=" + hunger;
+
 	}
 	
 	public Patient(String name, String idNumber) {
@@ -62,11 +67,20 @@ public class Patient {
 
 	@Override
 	public String toString() {
-		return "Patient [health=" + health + ", bloodLevel=" + bloodLevel + ", hunger=" + hunger + ", name=" + name
-				+ ", idNumber=" + idNumber + "]";
+		return "Patient name=" + name + "\nidNumber=" + idNumber + "\nhealth=" + health + "\nbloodLevel=" + bloodLevel + "\nhunger=" + hunger;
 	}
-	
+
+	public String stats() {
+		return "Patient name=" + name + "\nidNumber=" + idNumber + "\nhealth=" + health + "\nbloodLevel=" + bloodLevel + "\nhunger=" + hunger;
+	}
+
+	public void tick() {
+		health -= 1;
+		bloodLevel -= 1;
+		hunger -= 1;
+	}
 }
+	
 
 //	
 //	private int healthLevel;
