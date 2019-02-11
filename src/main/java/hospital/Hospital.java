@@ -79,7 +79,7 @@ public class Hospital {
 
 		}
 	}
-	//empolyee
+	//employee
 	public void addEmployee(Employee employee) {
 		employeeList.remove(employee.getIdNumber(), employee);
 	}

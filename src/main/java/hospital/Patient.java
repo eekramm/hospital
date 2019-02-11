@@ -81,23 +81,3 @@ public class Patient {
 	}
 }
 	
-
-//	
-//	private int healthLevel;
-//	private int bloodLevel;
-//	private final static int BLOOD_LEVEL = 20; //default inti blood level -- final sets value in stone (immutable)
-//
-//	
-//	public int getHealth() {
-//		return health;
-//	}
-//	
-//	public Patient(String string) {
-//		health = HEALTH_LEVEL;
-//		bloodLevel = BLOOD_LEVEL;
-//	}
-//
-//	}
-//	
-//
-//
