@@ -17,5 +17,6 @@ public class BarMakerClass {
 		String statusBar = "|" + littleTicks + littleSpaces + "| " + percent + "%";
 		return statusBar;
 	}
+	
 
 }

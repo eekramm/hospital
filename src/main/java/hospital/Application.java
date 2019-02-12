@@ -8,7 +8,7 @@ public class Application {
 
 		// hashmap
 		Hospital list = new Hospital(10, 10);
-
+		
 		// objects
 		Patient patient = new Patient("Sicky", "12");
 		Doctor doctor = new Doctor("Dr.Dave", "Doctor", "5");
@@ -38,6 +38,7 @@ public class Application {
 		System.out.println("3. Continue as the Hospital Manager");
 
 		String userChoice = input.nextLine();
+		
 		switch (userChoice) {
 		case "1":
 			System.out.println("Directions will be added in future iterations");
@@ -72,7 +73,16 @@ public class Application {
 					System.out.println("see individual patient stats");
 					System.out.println(newPatient);
 					System.out.println("See your entire patient population");
-					System.out.println(list.getPatientStatList());
+//					System.out.println(list.getPatientStatList());
+					for (Patient specificPatient : list.getPatientStatList()) {
+						System.out.println(specificPatient.getName());
+						System.out.println("Blood Level");
+						System.out.println(list.barMaker(specificPatient.getBloodLevel()));
+						System.out.println("Health");
+						System.out.println(list.barMaker(specificPatient.getHealth()));
+						System.out.println("Hunger");
+						System.out.println(list.barMaker(specificPatient.getHunger()));
+					}
 
 					System.out.println("Press any key to return to the previous menu");
 					input.nextLine();
@@ -88,14 +98,30 @@ public class Application {
 					list.removePatient(rmPt);
 
 					System.out.println("See your entire patient population");
-					System.out.println(list.getPatientStatList());
-
+//					System.out.println(list.getPatientStatList());
+					for (Patient specificPatient : list.getPatientStatList()) {
+						System.out.println(specificPatient.getName());
+						System.out.println("Blood Level");
+						System.out.println(list.barMaker(specificPatient.getBloodLevel()));
+						System.out.println("Health");
+						System.out.println(list.barMaker(specificPatient.getHealth()));
+						System.out.println("Hunger");
+						System.out.println(list.barMaker(specificPatient.getHunger()));
+					}
 					System.out.println("Press any key to return to the previous menu");
 					input.nextLine();
 					break;
 
 				case "3":
-					System.out.println(list.getPatientStatList());
+					for (Patient specificPatient : list.getPatientStatList()) {
+						System.out.println(specificPatient.getName());
+						System.out.println("Blood Level");
+						System.out.println(list.barMaker(specificPatient.getBloodLevel()));
+						System.out.println("Health");
+						System.out.println(list.barMaker(specificPatient.getHealth()));
+						System.out.println("Hunger");
+						System.out.println(list.barMaker(specificPatient.getHunger()));
+					}
 					System.out.println("Please enter the ID number of the patient you would like to interact with");
 					String idEntered = input.nextLine();
 
@@ -131,7 +157,8 @@ public class Application {
 							System.out.println("Press any key to return to the previous menu");
 							input.nextLine();
 							break;
-						}
+						} 
+						break;
 					case "2":
 						System.out.println("Would who would you like to perform this task");
 						System.out.println("1. Doctor");
@@ -162,7 +189,7 @@ public class Application {
 						case "4":
 							foo = !foo; // want to go back to draw blood feed pt
 						}
-
+						break;
 					case "3":
 						nurse.feed(idPt);
 						System.out.println("The Nurse has performed this task\n");
@@ -178,7 +205,7 @@ public class Application {
 						foo = !foo;
 						break;
 					}
-
+					break;
 					// interact with all patients
 				case "4":
 					System.out.println("What would you like to do?");
@@ -197,26 +224,52 @@ public class Application {
 						switch (userInput7) {
 						case "1":
 							list.treatAllPatients();
-							System.out.println(list.getPatientStatList());
+//							System.out.println(list.getPatientStatList());
+							for (Patient specificPatient : list.getPatientStatList()) {
+								System.out.println(specificPatient.getName());
+								System.out.println("Blood Level");
+								System.out.println(list.barMaker(specificPatient.getBloodLevel()));
+								System.out.println("Health");
+								System.out.println(list.barMaker(specificPatient.getHealth()));
+								System.out.println("Hunger");
+								System.out.println(list.barMaker(specificPatient.getHunger()));
+							}
 							System.out.println("Press any key to return to the previous menu");
 							String k = input.nextLine();
 							break;
 
 						case "2":
 							list.drawAllPatientBlood();
-							System.out.println(list.getPatientStatList());
+//							System.out.println(list.getPatientStatList());
+							for (Patient specificPatient : list.getPatientStatList()) {
+								System.out.println(specificPatient.getName());
+								System.out.println("Blood Level");
+								System.out.println(list.barMaker(specificPatient.getBloodLevel()));
+								System.out.println("Health");
+								System.out.println(list.barMaker(specificPatient.getHealth()));
+								System.out.println("Hunger");
+								System.out.println(list.barMaker(specificPatient.getHunger()));
+							}
 							System.out.println("Press any key to return to the previous menu");
 							String rd = input.nextLine();
 							break;
 						}
-
+						break;
 					case "2":
-						System.out.println(list.getPatientStatList());
+						for (Patient specificPatient : list.getPatientStatList()) {
+							System.out.println(specificPatient.getName());
+							System.out.println("Blood Level");
+							System.out.println(list.barMaker(specificPatient.getBloodLevel()));
+							System.out.println("Health");
+							System.out.println(list.barMaker(specificPatient.getHealth()));
+							System.out.println("Hunger");
+							System.out.println(list.barMaker(specificPatient.getHunger()));
+						}
 						break;
 					case "3":
 						foo = !foo;
 					}
-
+					break;
 				case "5":
 					foo = !foo;
 				}
@@ -252,11 +305,11 @@ public class Application {
 						String userInput12 = input.nextLine();
 
 						switch (userInput12) {
-
+						
 						case "1":
 							janitor.sweep(list);
 							System.out.println(list.toString());
-
+						break;
 						case "2":
 							System.out.println("You have entered the lair of Vlad the Vampire Janitor");
 							System.out.println("muah ha ha ha Weeeelcome my friend, what should we do?");
@@ -292,7 +345,7 @@ public class Application {
 								}
 							}
 						}
-
+						break;
 					case "2":
 						System.out.println("Would who would you like to perform this task");
 						System.out.println("1. Nurse");

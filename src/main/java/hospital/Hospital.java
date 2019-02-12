@@ -39,7 +39,7 @@ public class Hospital {
 	// HashMap Starts below
 	static HashMap<String, Patient> patientList = new HashMap<String, Patient>();
 	static HashMap<String, Employee> employeeList = new HashMap<String, Employee>();
-
+	
 	//patient
 	public void addPatient(Patient patient) {
 		patientList.put(patient.getIdNumber(), patient);
@@ -103,6 +103,22 @@ public class Hospital {
 
 	public String getAllHosptialStats() {
 		return "\nCleanliness=" + cleanliness + "\nOrganization Level=" + organization;
+	}
+	
+	public static String barMaker(int stat) {
+		String littleSpaces;
+		int activeBars = Math.round(stat);
+		int inactiveBars = 20 - activeBars;
+		double percent = Math.round(stat / .2);
+		String littleTicks = new String(new char[activeBars]).replace("\0", "-");
+
+		if (inactiveBars <= 0) {
+			littleSpaces = "";
+		} else {
+			littleSpaces = new String(new char[inactiveBars]).replace("\0", " ");
+		}
+		String statusBar = "|" + littleTicks + littleSpaces + "| " + percent + "%";
+		return statusBar;
 	}
 
 }

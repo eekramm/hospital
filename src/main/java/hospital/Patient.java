@@ -64,7 +64,7 @@ public class Patient {
 	public void satisfyHunger(int hungerAfterFeed) {
 		hunger += hungerAfterFeed;
 	}
-
+	
 	@Override
 	public String toString() {
 		return "Patient name=" + name + "\nidNumber=" + idNumber + "\nhealth=" + health + "\nbloodLevel=" + bloodLevel + "\nhunger=" + hunger;
